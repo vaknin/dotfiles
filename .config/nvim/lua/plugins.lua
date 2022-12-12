@@ -30,7 +30,8 @@ return require('packer').startup(function(use)
   use {     'numToStr/Comment.nvim',
     config = function()
         require('Comment').setup()
-    end }
+    end
+  }
 
   -- Startup theme
   use {
@@ -43,8 +44,17 @@ return require('packer').startup(function(use)
 
   -- Status bar - lua line
   use {
-  'nvim-lualine/lualine.nvim',
-  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-}
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+
+  use {
+      'nvim-treesitter/nvim-treesitter',
+      run = function()
+          local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+          ts_update()
+      end,
+  }
+
 
 end)

@@ -23,8 +23,7 @@ alias nck="n $XDG_CONFIG_HOME/nvim/lua/keymaps.lua"
 alias nalac="n .config/alacritty/alacritty.yml"
 alias slp="systemctl suspend"
 
-alias dcfg='/usr/bin/git --git-dir=/home/kivan/.gitcfg/ --work-tree=/home/kivan'
-alias dcfg-add-commit-push="dcfg add -u && dcfg commit -m '.' && dcfg push"
+alias yadm-add-commit-push="yadm add -u && yadm commit -m '.' && yadm push"
 
 # Terminal Preface
 PS1='🪴\W> '

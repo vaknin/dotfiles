@@ -21,7 +21,7 @@ alias nc="n $XDG_CONFIG_HOME/nvim/init.lua"
 alias ncp="n $XDG_CONFIG_HOME/nvim/lua/plugins.lua"
 alias nck="n $XDG_CONFIG_HOME/nvim/lua/keymaps.lua"
 alias nalac="n .config/alacritty/alacritty.yml"
-alias slp="systemctl suspend"
+alias slp="sudo systemctl suspend"
 
 alias yadm-add-commit-push="yadm add -u && yadm commit -m '.' && yadm push"
 

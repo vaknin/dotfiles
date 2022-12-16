@@ -27,21 +27,15 @@ return require('packer').startup(function(use)
   -- Completion & Snippets
   use 'hrsh7th/nvim-cmp' 
   use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-nvim-lua'
-  use 'hrsh7th/cmp-nvim-lsp-signature-help'
-  use 'hrsh7th/cmp-vsnip'                             
+  -- use 'hrsh7th/cmp-nvim-lua'
+  -- use 'hrsh7th/cmp-nvim-lsp-signature-help'
+  -- use 'hrsh7th/cmp-vsnip'                             
   use 'hrsh7th/cmp-path'                              
-  use 'hrsh7th/cmp-buffer'                            
-  use 'hrsh7th/vim-vsnip'
+  -- use 'hrsh7th/cmp-buffer'                            
+  -- use 'hrsh7th/vim-vsnip'
 
   -- Multi-line plugins
 
-  -- Telescope
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
-  
   -- Commenting
   use {     'numToStr/Comment.nvim',
     config = function()
@@ -76,6 +70,11 @@ return require('packer').startup(function(use)
 
   use 'voldikss/vim-floaterm' -- Terminal
   use 'mg979/vim-visual-multi' -- multi cursor
+  use 'RRethy/vim-illuminate' -- highlight same word on other places
 
+  use {
+    "windwp/nvim-autopairs",
+      config = function() require("nvim-autopairs").setup {} end
+  }
 
 end)

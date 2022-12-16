@@ -18,6 +18,22 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-tree.lua' -- File explorer tree
   use 'nvim-tree/nvim-web-devicons' -- File explorer tree icons
 
+  -- LSPs
+  use 'williamboman/mason.nvim'    
+  use 'williamboman/mason-lspconfig.nvim'
+  use 'neovim/nvim-lspconfig' 
+  use 'simrat39/rust-tools.nvim'
+
+  -- Completion & Snippets
+  use 'hrsh7th/nvim-cmp' 
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-nvim-lua'
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'
+  use 'hrsh7th/cmp-vsnip'                             
+  use 'hrsh7th/cmp-path'                              
+  use 'hrsh7th/cmp-buffer'                            
+  use 'hrsh7th/vim-vsnip'
+
   -- Multi-line plugins
 
   -- Telescope
@@ -32,15 +48,6 @@ return require('packer').startup(function(use)
         require('Comment').setup()
     end
   }
-
-  -- Startup theme
-  -- use {
-  --   "startup-nvim/startup.nvim",
-  --   requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
-  --   config = function()
-  --     require"startup".setup({theme = "dashboard"})
-  --   end
-  -- }
 
   -- Status bar - lua line
   use {
@@ -57,6 +64,18 @@ return require('packer').startup(function(use)
   }
 
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v2', -- optional but strongly recommended
+    config = function()
+      -- you can configure Hop the way you like here; see :h hop-config
+      require'hop'.setup { keys = 'qwertyuiopasdfghjklzxcvbnm1234567890' }
+    end
+  }
+
+  use 'voldikss/vim-floaterm' -- Terminal
+  use 'mg979/vim-visual-multi' -- multi cursor
 
 
 end)

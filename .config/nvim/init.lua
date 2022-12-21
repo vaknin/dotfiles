@@ -52,19 +52,20 @@ require('lualine').setup()
 require("bufferline").setup()
 require("mason").setup()
 require("mason-lspconfig").setup()
+require('lspconfig')['rust_analyzer'].setup{}
 
-local rt = require("rust-tools")
-
-rt.setup({
-  server = {
-    on_attach = function(_, bufnr)
-      -- Hover actions
-      vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
-      -- Code action groups
-      vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
-    end,
-  },
-})
+-- local rt = require("rust-tools")
+--
+-- rt.setup({
+--   server = {
+--     on_attach = function(_, bufnr)
+--       -- Hover actions
+--       vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+--       -- Code action groups
+--       vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+--     end,
+--   },
+-- })
 
 -- Completion Plugin Setup
 local cmp = require'cmp'
@@ -93,7 +94,7 @@ cmp.setup({
   -- Installed sources:
   sources = {
     { name = 'path' },                              -- file paths
-    { name = 'nvim_lsp', keyword_length = 3 },      -- from language server
+    { name = 'nvim_lsp', keyword_length = 1 },      -- from language server
     -- { name = 'nvim_lsp_signature_help'},            -- display function signatures with current parameter emphasized
     -- { name = 'nvim_lua', keyword_length = 2},       -- complete neovim's Lua runtime API such vim.lsp.*
     -- { name = 'buffer', keyword_length = 2 },        -- source current buffer

@@ -9,8 +9,9 @@
 export XDG_CONFIG_HOME=$HOME/.config 
 
 # Aliases
-alias ls='ls --color=auto'
+alias ls='lsd'
 alias ll='ls -l'
+alias c='bat'
 alias clp='xclip -selection c' # pipe to 'toclp' to copy to clipboard
 alias :q="exit" # exit vim-style
 alias n="nvim" # Neovim shortcut
@@ -29,3 +30,7 @@ PS1='🪴\W> '
 
 # Rust env
 . "$HOME/.cargo/env"
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

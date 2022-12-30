@@ -68,8 +68,10 @@ return require('packer').startup(function(use)
       require'hop'.setup { keys = 'qwertyuiopasdfghjklzxcvbnm1234567890' }
     end
   }
-
-  use 'voldikss/vim-floaterm' -- Terminal
+  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+    require("toggleterm").setup()
+  end}
+  -- use 'voldikss/vim-floaterm' -- Terminal
   use 'mg979/vim-visual-multi' -- multi cursor
   use 'RRethy/vim-illuminate' -- highlight same word on other places
 
